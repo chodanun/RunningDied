@@ -10,9 +10,11 @@ import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 
 public class RunningDied extends BasicGame {
-
-	BoyDied boy ;
-	Image image ;
+	
+	private Image image ;
+	private BoyDied boy ;
+	private Tree[] trees = new Tree[5] ; 
+	private int delayTime = 0 ;
 	
 	public RunningDied(String title){
 		super(title);
@@ -22,17 +24,32 @@ public class RunningDied extends BasicGame {
 	public void render(GameContainer arg0, Graphics arg1) throws SlickException {
 		image.draw(0,-5);
 		boy.render();
+		for (Tree tree : trees){
+			tree.render();
+		}
+			
 	}
 
 	@Override
 	public void init(GameContainer arg) throws SlickException {
 		image = new Image("res/background.png");
 		boy = new BoyDied(440,440);
+		initTree();
+	}
+	
+	private void initTree() throws SlickException {
+		trees[0] = new Tree(440,60);
+		trees[1] = new Tree(366,110);
+		trees[2] = new Tree(246,164);
+		trees[3] = new Tree(104,222);
+		trees[4] = new Tree(-24,286);
 	}
 
 	@Override
 	public void update(GameContainer arg0, int arg1) throws SlickException {
-		
+		for (Tree tree : trees){
+			tree.update();
+		}
 	}
 	
 	@Override
