@@ -41,7 +41,7 @@ public class BoyDied  {
 	}
 	
 	public void moveRight (){
-		if ( x == 70 ){
+		if ( x == 100 ){
 			x = 440;
 		}
 		else {
@@ -54,8 +54,26 @@ public class BoyDied  {
 			x = 440 ;
 		}
 		else {
-			x = 70 ;
+			x = 100 ;
 		}
+	}
+	
+	public void jump (){
+		y-=200;
+	}
+	
+	public void checkJump(){
+		if (y<440){
+			y+=5;
+		}
+	}
+	
+	public float getX (){
+		return this.x;
+	}
+	
+	public float getY (){
+		return this.y;
 	}
 	
 }

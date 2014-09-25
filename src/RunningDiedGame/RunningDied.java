@@ -23,10 +23,10 @@ public class RunningDied extends BasicGame {
 	@Override
 	public void render(GameContainer arg0, Graphics arg1) throws SlickException {
 		image.draw(0,-5);
-		boy.render();
 		for (Tree tree : trees){
 			tree.render();
 		}
+		boy.render();
 			
 	}
 
@@ -38,8 +38,8 @@ public class RunningDied extends BasicGame {
 	}
 	
 	private void initTree() throws SlickException {
-		trees[0] = new Tree(440,60);
-		trees[1] = new Tree(366,110);
+		trees[0] = new Tree(420,60);
+		trees[1] = new Tree(336,110);
 		trees[2] = new Tree(246,164);
 		trees[3] = new Tree(104,222);
 		trees[4] = new Tree(-24,286);
@@ -50,6 +50,7 @@ public class RunningDied extends BasicGame {
 		for (Tree tree : trees){
 			tree.update();
 		}
+		boy.checkJump();
 	}
 	
 	@Override
@@ -59,6 +60,10 @@ public class RunningDied extends BasicGame {
 	    }
 		else if (key == Input.KEY_LEFT){
 			boy.moveLeft();
+		}else if (key == Input.KEY_SPACE){
+			if (boy.getY()==440){
+				boy.jump();
+			}
 		}
 		
 	}

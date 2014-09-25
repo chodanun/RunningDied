@@ -8,6 +8,7 @@ public class Tree {
 	Image image ;
 	private float x ;
 	private float y ;
+	private float sizeX = 158 ,sizeY = 199 ;
 	
 	public Tree(float x , float y) throws SlickException {
 		image = new Image("res/tree1.png");
@@ -16,7 +17,7 @@ public class Tree {
 	}
 	
 	public void render (){
-		image.draw(x,y);
+		image.draw(x,y,sizeX,sizeY);
 	}
 	
 	public void update (){
@@ -26,5 +27,6 @@ public class Tree {
 			x = 440 ;
 			y = 56 ; 
 		}
+			
 	}
 }
