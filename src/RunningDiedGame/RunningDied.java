@@ -15,6 +15,7 @@ public class RunningDied extends BasicGame {
 	private BoyDied boy ;
 	private Tree[] trees = new Tree[5] ; 
 	private int delayTime = 0 ;
+	private ItemRock rock ;
 	
 	public RunningDied(String title){
 		super(title);
@@ -27,6 +28,7 @@ public class RunningDied extends BasicGame {
 			tree.render();
 		}
 		boy.render();
+		rock.render();
 			
 	}
 
@@ -35,6 +37,7 @@ public class RunningDied extends BasicGame {
 		image = new Image("res/background.png");
 		boy = new BoyDied(440,440);
 		initTree();
+		rock = new ItemRock() ;
 	}
 	
 	private void initTree() throws SlickException {
@@ -51,6 +54,7 @@ public class RunningDied extends BasicGame {
 			tree.update();
 		}
 		boy.checkJump();
+		rock.update();
 	}
 	
 	@Override
