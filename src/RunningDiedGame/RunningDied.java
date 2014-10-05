@@ -15,7 +15,7 @@ public class RunningDied extends BasicGame {
 	private Image image , overImage;
 	private BoyDied boy ;
 	private Tree[] trees = new Tree[5] ; 
-	private ItemRock rock , rock2;
+	private ItemRock rock;
 	private Boolean isGameOver = false;
 	private FastItemRock fastrock ;
 	private static int score = 0 ;
@@ -34,7 +34,6 @@ public class RunningDied extends BasicGame {
 			rock.render();
 			fastrock.render();
 			boy.render();	
-			
 			point.drawString("" + score , 540, 35);
 		}
 		else{

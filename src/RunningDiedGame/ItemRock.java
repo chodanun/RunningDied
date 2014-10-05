@@ -18,9 +18,10 @@ public class ItemRock {
 	
 	public ItemRock(int x , int y) throws SlickException {
 		image = new Image("res/rock.png");
+		a = random.nextInt(3);
 		this.x = x ;
 		this.y = y ;
-		a = random.nextInt(3);
+		
 	}
 	
 	public void render(){

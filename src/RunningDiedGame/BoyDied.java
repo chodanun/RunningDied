@@ -37,7 +37,6 @@ public class BoyDied  {
 				action = "res/boy.png";
 			}
 			delaytime = 0 ;
-			
 		}
 		delaytime++;
 	}

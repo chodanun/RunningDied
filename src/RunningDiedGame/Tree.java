@@ -21,18 +21,27 @@ public class Tree {
 	}
 	
 	public void update (){
+		moveTree();
+		outOfScreen();
+	}
+
+	private void moveTree() {
 		this.x -= Math.cos(Math.toRadians(25));
 		this.y += Math.sin(Math.toRadians(25));
-		if ( x <= -200){
-			x = 440 ;
-			y = 56 ;
-			sizeX=158;
-			sizeY=199;
-			 
-		}
+		
 		sizeX+=1;
 		sizeY+=1;
 		x-=1;
 		y-=1;
 	}
+
+	private void outOfScreen() {
+		if ( x <= -200){
+			x = 440 ;
+			y = 56 ;
+			sizeX=158;
+			sizeY=199;
+		}
+	}
+	
 }
