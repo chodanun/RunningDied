@@ -16,6 +16,7 @@ public class BoyDied  {
 	private int delaytime = 0 ;
 	private String action = "res/boy.png" ;
 	
+	
 	public BoyDied(float x, float y) throws SlickException{
 		image = new Image(action);
 		this.x = x ;
@@ -36,6 +37,7 @@ public class BoyDied  {
 				action = "res/boy.png";
 			}
 			delaytime = 0 ;
+			
 		}
 		delaytime++;
 	}

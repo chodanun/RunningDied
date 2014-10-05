@@ -1,19 +1,26 @@
 package RunningDiedGame;
 
+import java.util.Random;
+
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 
 public class ItemRock {
 
 	private Image image ;
-	private float x ;
-	private float y ;
-	private int sizeX = 10;
-	private int sizeY = 10;
-	public ItemRock() throws SlickException {
+	protected float x ;
+	protected float y ;
+	protected float sizeX = 50;
+	protected float sizeY = 50;
+	protected int a ;
+	Random random = new Random ();
+	BoyDied boy = new BoyDied (1,1);
+	
+	public ItemRock(int x , int y) throws SlickException {
 		image = new Image("res/rock.png");
-		x = 690 ;
-		y = 310 ;
+		this.x = x ;
+		this.y = y ;
+		a = random.nextInt(3);
 	}
 	
 	public void render(){
@@ -21,19 +28,40 @@ public class ItemRock {
 	}
 	
 	public void update(){
-		x -= 2*Math.cos(Math.toRadians(70));
-		y += 2*Math.sin(Math.toRadians(70));
-		if ( y >= 660){
-			x = 690 ;
-			y =310 ;
-			sizeX=10;
-			sizeY=10;
-			 
+		moveRock();
+		outOfScreen();
+	}
+
+	public void moveRock() {
+		extendSize();
+		y+=2;
+		if ( a==1 ) x-=0.7 ;
+		else if ( a==2) x-=2.8 ;
+		else x+=1.1 ;
+	}
+
+	protected void extendSize() {
+		sizeX+=0.2;
+		sizeY+=0.2;
+	}
+
+	private void outOfScreen() {
+		if ( y>=660){
+			x = 620;
+			y = 230;
+			System.out.println(sizeX);
+			sizeX = 50;
+			sizeY = 50;
+			a = random.nextInt(3);
 		}
-		sizeX+=1;
-		sizeY+=1;
-		x-=1;
-		y-=1;
+	}
+	
+	public float getX (){
+		return this.x ;
+	}
+	
+	public float getY (){
+		return this.y ;
 	}
 
 }
