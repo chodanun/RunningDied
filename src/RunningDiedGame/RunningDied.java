@@ -100,8 +100,7 @@ public class RunningDied extends BasicGame {
 				boy.jump();
 			}
 		}
-		if (isGameOver = true){
-				
+			
 			if (key == Input.KEY_ENTER){
 				try {
 					init(null);
@@ -110,7 +109,7 @@ public class RunningDied extends BasicGame {
 				isGameOver = false ;
 			}
 		}
-	}
+	
 	public static void main (String[] args){
 		 try {
 		    	RunningDied game = new RunningDied("Running Too Died Guys GG!!");
