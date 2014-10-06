@@ -20,15 +20,15 @@ public class RunningDied extends BasicGame {
 	private FastItemRock fastrock ;
 	private static int score = 0 ;
 	
-	public RunningDied(String title){
+	public RunningDied(String title) {
 		super(title);
 	}
 	
 	@Override
 	public void render(GameContainer arg0, Graphics point) throws SlickException {
-		if ( isGameOver == false){
+		if ( isGameOver == false) {
 			image.draw(0,-5);
-			for (Tree tree : trees){
+			for (Tree tree : trees) {
 				tree.render();
 			}
 			rock.render();
@@ -36,7 +36,7 @@ public class RunningDied extends BasicGame {
 			boy.render();	
 			point.drawString("" + score , 540, 35);
 		}
-		else{
+		else {
 			overImage.draw(0,0);
 			point.drawString("Your Score is "+"" + score , 400, 35);
 		}
@@ -63,8 +63,8 @@ public class RunningDied extends BasicGame {
 
 	@Override
 	public void update(GameContainer arg0, int arg1) throws SlickException {
-		if(isGameOver == false){
-			for (Tree tree : trees){
+		if(isGameOver == false) {
+			for (Tree tree : trees) {
 				tree.update();
 			}
 			boy.checkJump();
@@ -75,42 +75,42 @@ public class RunningDied extends BasicGame {
 		}
 	}
 	
-	private void checkCollisionRock(){
-		if ( rock.getY() >=500 && rock.getY()<=630){
-			if (Math.abs(boy.getX()-rock.getX())<=50 ){
+	private void checkCollisionRock() {
+		if ( rock.getY() >=500 && rock.getY()<=630) {
+			if (Math.abs(boy.getX()-rock.getX())<=50 ) {
 				isGameOver = true ;
 			}
 		}
-		if ( fastrock.getY() >=520 && fastrock.getY()<=650){
-			if (Math.abs(boy.getX()-fastrock.getX())<=50 ){
+		if ( fastrock.getY() >= 520 && fastrock.getY() <= 650) {
+			if (Math.abs(boy.getX()-fastrock.getX()) <= 50) {
 				isGameOver = true ;
 			}
 		}
-		
 	}
+	
 	@Override
 	public void keyPressed (int key, char c) {
 		if (key == Input.KEY_RIGHT) {
 			boy.moveRight();
 	    }
-		else if (key == Input.KEY_LEFT){
+		else if (key == Input.KEY_LEFT) {
 			boy.moveLeft();
-		}else if (key == Input.KEY_SPACE){
-			if (boy.getY()==440){
+		}
+		else if (key == Input.KEY_SPACE ){
+			if (boy.getY()==440) {
 				boy.jump();
 			}
 		}
-			
-			if (key == Input.KEY_ENTER){
-				try {
-					init(null);
-					score = 0 ;
-				} catch (SlickException e) {}
+		else if (key == Input.KEY_ENTER && isGameOver == true) {
+			try {
+			init(null);
+			score = 0 ;	
+			} catch (SlickException e) {}
 				isGameOver = false ;
 			}
 		}
 	
-	public static void main (String[] args){
+	public static void main (String[] args) {
 		 try {
 		    	RunningDied game = new RunningDied("Running Too Died Guys GG!!");
 		      	AppGameContainer appgc = new AppGameContainer(game);
@@ -121,5 +121,4 @@ public class RunningDied extends BasicGame {
 		    	  e.printStackTrace();
 		    }
 	}
-
 }

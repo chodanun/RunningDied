@@ -24,11 +24,11 @@ public class ItemRock {
 		
 	}
 	
-	public void render(){
+	public void render() {
 		image.draw(x,y,sizeX,sizeY);
 	}
 	
-	public void update(){
+	public void update() {
 		moveRock();
 		outOfScreen();
 	}
@@ -47,7 +47,7 @@ public class ItemRock {
 	}
 
 	private void outOfScreen() {
-		if ( y>=660){
+		if ( y >= 660) {
 			x = 620;
 			y = 230;
 			System.out.println(sizeX);
@@ -57,12 +57,11 @@ public class ItemRock {
 		}
 	}
 	
-	public float getX (){
+	public float getX () {
 		return this.x ;
 	}
 	
-	public float getY (){
+	public float getY () {
 		return this.y ;
 	}
-
 }

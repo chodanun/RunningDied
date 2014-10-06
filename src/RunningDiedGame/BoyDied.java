@@ -17,20 +17,20 @@ public class BoyDied  {
 	private String action = "res/boy.png" ;
 	
 	
-	public BoyDied(float x, float y) throws SlickException{
+	public BoyDied(float x, float y) throws SlickException {
 		image = new Image(action);
 		this.x = x ;
 		this.y = y ;
 	}
 	
-	public void render () throws SlickException{
+	public void render () throws SlickException {
 		image.draw(x,y);
 		changeAction();
 	}
-	public void changeAction () throws SlickException{
-		if ( delaytime > 10 ){
+	public void changeAction () throws SlickException {
+		if ( delaytime > 10 ) {
 			image = new Image(action);
-			if ( action == "res/boy.png"){ 
+			if ( action == "res/boy.png") { 
 				action = "res/boy2.png";
 			}
 			else {
@@ -41,8 +41,8 @@ public class BoyDied  {
 		delaytime++;
 	}
 	
-	public void moveRight (){
-		if ( x == 100 ){
+	public void moveRight () {
+		if ( x == 100 ) {
 			x = 440;
 		}
 		else {
@@ -50,8 +50,8 @@ public class BoyDied  {
 		}
 	}
 	
-	public void moveLeft (){
-		if ( x == 750){
+	public void moveLeft () {
+		if ( x == 750) {
 			x = 440 ;
 		}
 		else {
@@ -59,22 +59,21 @@ public class BoyDied  {
 		}
 	}
 	
-	public void jump (){
+	public void jump () {
 		y-=200;
 	}
 	
-	public void checkJump(){
-		if (y<440){
+	public void checkJump() {
+		if (y < 440) {
 			y+=5;
 		}
 	}
 	
-	public float getX (){
+	public float getX () {
 		return this.x;
 	}
 	
-	public float getY (){
+	public float getY () {
 		return this.y;
 	}
-	
 }

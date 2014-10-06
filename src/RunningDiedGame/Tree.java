@@ -16,11 +16,11 @@ public class Tree {
 		this.y = y ;
 	}
 	
-	public void render (){
+	public void render () {
 		image.draw(x,y,sizeX,sizeY);
 	}
 	
-	public void update (){
+	public void update () {
 		moveTree();
 		outOfScreen();
 	}
