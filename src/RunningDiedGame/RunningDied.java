@@ -38,6 +38,7 @@ public class RunningDied extends BasicGame {
 		}
 		else{
 			overImage.draw(0,0);
+			point.drawString("Your Score is "+"" + score , 400, 35);
 		}
 	}
 
@@ -102,6 +103,7 @@ public class RunningDied extends BasicGame {
 		else if (key == Input.KEY_ENTER){
 			try {
 				init(null);
+				score = 0 ;
 			} catch (SlickException e) {}
 			isGameOver = false ;
 		}
