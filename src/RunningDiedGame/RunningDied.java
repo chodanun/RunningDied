@@ -100,7 +100,7 @@ public class RunningDied extends BasicGame {
 				boy.jump();
 			}
 		}
-		if (isGameOver = false){
+		if (isGameOver = true){
 				
 			if (key == Input.KEY_ENTER){
 				try {
