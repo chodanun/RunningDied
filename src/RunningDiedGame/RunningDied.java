@@ -100,14 +100,16 @@ public class RunningDied extends BasicGame {
 				boy.jump();
 			}
 		}
-		else if (key == Input.KEY_ENTER){
-			try {
-				init(null);
-				score = 0 ;
-			} catch (SlickException e) {}
-			isGameOver = false ;
+		if (isGameOver = false){
+				
+			if (key == Input.KEY_ENTER){
+				try {
+					init(null);
+					score = 0 ;
+				} catch (SlickException e) {}
+				isGameOver = false ;
+			}
 		}
-		
 	}
 	public static void main (String[] args){
 		 try {
